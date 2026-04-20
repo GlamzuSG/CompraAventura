@@ -2,20 +2,15 @@
 
 El sistema **Compra Aventura** debe cumplir con los siguientes estándares técnicos para garantizar su operatividad y seguridad:
 
-* **1. Rendimiento:**
-    * El sistema debe responder en menos de **2 segundos**.
-    * Soporte para al menos **1000 usuarios simultáneos**.
-* **2. Seguridad:**
-    * Las contraseñas deben almacenarse encriptadas.
-    * El sistema debe utilizar autenticación segura mediante **JWT (JSON Web Tokens)**.
-* **3. Usabilidad:**
-    * La interfaz debe ser intuitiva y fácil de usar.
-    * El sistema debe ser accesible desde dispositivos móviles (**Diseño Responsivo**).
-* **4. Disponibilidad:**
-    * El sistema debe estar disponible el **99%** del tiempo.
-* **5. Compatibilidad:**
-    * Funcionamiento garantizado en navegadores **Chrome, Edge y Firefox**.
-* **6. Escalabilidad:**
-    * El sistema debe poder aumentar su capacidad sin afectar el rendimiento.
-* **7. Mantenibilidad:**
-    * El código debe estar documentado y organizado bajo estándares profesionales.
+| ID     | Tipo                      | Descripción                                      | Prioridad |
+|--------|---------------------------|--------------------------------------------------|----------|
+| REF-01 | Rendimiento (Performance) | El sistema debe responder en menos de 2 segundos | Alta     |
+| REF-02 | Rendimiento (Performance) | Soportar al menos 1000 usuarios simultáneos      | Alta     |
+| REF-03 | Seguridad                 | Contraseñas encriptadas                          | Alta     |
+| REF-04 | Seguridad                 | Autenticación mediante JWT                       | Alta     |
+| REF-05 | Usabilidad                | Interfaz intuitiva                               | Media    |
+| REF-06 | Usabilidad                | Diseño responsivo                                | Media    |
+| REF-07 | Disponibilidad            | Sistema disponible 99% del tiempo                | Alta     |
+| REF-08 | Compatibilidad            | Funcionar en Chrome, Edge y Firefox              | Media    |
+| REF-09 | Escalabilidad             | Aumentar capacidad sin degradar rendimiento      | Media    |
+| REF-10 | Mantenibilidad            | Código documentado y organizado                  | Media    |
