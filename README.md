@@ -26,7 +26,7 @@ Nuestro proyecto aborda la falta de transparencia en el mercado de consumo masiv
 
 ---
 
-## 📋 Historias de Usuario (Backlog)
+
 
 ## 📋 Backlog de Historias de Usuario (Issues)
 
