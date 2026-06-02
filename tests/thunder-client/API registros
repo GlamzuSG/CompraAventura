@@ -1,0 +1,8 @@
+{
+  "mensaje": "Usuario registrado exitosamente",
+  "usuario": {
+    "id": 4,
+    "nombre": "Estudiante UV",
+    "email": "estudiante@uv.cl"
+  }
+}
