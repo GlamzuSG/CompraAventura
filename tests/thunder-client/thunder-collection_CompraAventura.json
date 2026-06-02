@@ -1,0 +1,471 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "CompraAventura - APIs Auth",
+  "collectionId": "ca-auth-collection-2026",
+  "dateExported": "2026-06-01",
+  "version": "1.2",
+  "folders": [
+    {
+      "id": "folder-us07",
+      "name": "US-07 - Registro de Usuarios",
+      "containerId": ""
+    },
+    {
+      "id": "folder-us08",
+      "name": "US-08 - Login con JWT",
+      "containerId": ""
+    }
+  ],
+  "requests": [
+    {
+      "id": "req-us07-01",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-01 Registro exitoso (happy path)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 1,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Juan Pérez\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"Segura123\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        {
+          "type": "res-status",
+          "custom": "",
+          "action": "equal",
+          "value": "201"
+        },
+        {
+          "type": "res-body",
+          "custom": "json.mensaje",
+          "action": "contains",
+          "value": "exitosamente"
+        },
+        {
+          "type": "res-body",
+          "custom": "json.usuario.email",
+          "action": "equal",
+          "value": "juan.perez@example.com"
+        }
+      ]
+    },
+    {
+      "id": "req-us07-02",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-02 Email duplicado (límite: unicidad)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 2,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Juan Pérez Bis\",\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"OtraPass456\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "409" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "ya está registrado" }
+      ]
+    },
+    {
+      "id": "req-us07-03",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-03 Sin nombre (campo requerido vacío)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 3,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"nuevo@example.com\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "requeridos" }
+      ]
+    },
+    {
+      "id": "req-us07-04",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-04 Sin email (campo requerido vacío)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 4,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"María García\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us07-05",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-05 Contraseña menor a 8 caracteres (valor límite inferior)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 5,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Pedro López\",\n  \"email\": \"pedro@example.com\",\n  \"password\": \"abc123\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "8 caracteres" }
+      ]
+    },
+    {
+      "id": "req-us07-06",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-06 Contraseña exactamente 8 caracteres (valor límite exacto)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 6,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Ana Torres\",\n  \"email\": \"ana.torres@example.com\",\n  \"password\": \"Pass1234\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "201" }
+      ]
+    },
+    {
+      "id": "req-us07-07",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-07 Email con formato inválido (clase equivalencia inválida)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 7,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Carlos Ruiz\",\n  \"email\": \"no-es-un-email\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "inválido" }
+      ]
+    },
+    {
+      "id": "req-us07-08",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-08 Body completamente vacío",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 8,
+      "body": {
+        "type": "json",
+        "raw": "{}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us07-09",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-09 Nombre con solo espacios (clase equivalencia inválida)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 9,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"   \",\n  \"email\": \"valido@example.com\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us07-10",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-10 Email válido con mayúsculas (normalización)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 10,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": \"Lucía Morales\",\n  \"email\": \"LUCIA.MORALES@EXAMPLE.COM\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "201" },
+        { "type": "res-body", "custom": "json.usuario.email", "action": "equal", "value": "lucia.morales@example.com" }
+      ]
+    },
+    {
+      "id": "req-us07-11",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us07",
+      "name": "US07-11 Tipo de dato incorrecto (número en nombre)",
+      "url": "http://localhost:3000/api/auth/registro",
+      "method": "POST",
+      "sortNum": 11,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"nombre\": 12345,\n  \"email\": \"tipo@example.com\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us08-01",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-01 Login exitoso (happy path)",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 1,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"Segura123\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "200" },
+        { "type": "res-body", "custom": "json.token", "action": "notEmpty", "value": "" },
+        { "type": "res-body", "custom": "json.mensaje", "action": "contains", "value": "exitoso" }
+      ]
+    },
+    {
+      "id": "req-us08-02",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-02 Contraseña incorrecta (credenciales inválidas)",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 2,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"juan.perez@example.com\",\n  \"password\": \"Incorrecta99\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "401" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "Credenciales inválidas" }
+      ]
+    },
+    {
+      "id": "req-us08-03",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-03 Email no registrado",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 3,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"noexiste@example.com\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "401" }
+      ]
+    },
+    {
+      "id": "req-us08-04",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-04 Sin email (campo requerido faltante)",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 4,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us08-05",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-05 Sin password (campo requerido faltante)",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 5,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"juan.perez@example.com\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us08-06",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-06 Body vacío",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 6,
+      "body": {
+        "type": "json",
+        "raw": "{}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us08-07",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-07 Email con formato inválido",
+      "url": "http://localhost:3000/api/auth/login",
+      "method": "POST",
+      "sortNum": 7,
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"email\": \"no-email\",\n  \"password\": \"Password1\"\n}"
+      },
+      "headers": [
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "400" }
+      ]
+    },
+    {
+      "id": "req-us08-08",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-08 Acceso a perfil con token válido (ruta protegida)",
+      "url": "http://localhost:3000/api/auth/perfil",
+      "method": "GET",
+      "sortNum": 8,
+      "body": { "type": "none" },
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{token_jwt}}" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "200" },
+        { "type": "res-body", "custom": "json.usuario.email", "action": "notEmpty", "value": "" }
+      ]
+    },
+    {
+      "id": "req-us08-09",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-09 Acceso a perfil sin token (no autorizado)",
+      "url": "http://localhost:3000/api/auth/perfil",
+      "method": "GET",
+      "sortNum": 9,
+      "body": { "type": "none" },
+      "headers": [],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "401" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "Token no proporcionado" }
+      ]
+    },
+    {
+      "id": "req-us08-10",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-10 Acceso con token malformado",
+      "url": "http://localhost:3000/api/auth/perfil",
+      "method": "GET",
+      "sortNum": 10,
+      "body": { "type": "none" },
+      "headers": [
+        { "name": "Authorization", "value": "Bearer token.invalido.123" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "401" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "inválido" }
+      ]
+    },
+    {
+      "id": "req-us08-11",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-11 Logout exitoso (con token válido)",
+      "url": "http://localhost:3000/api/auth/logout",
+      "method": "POST",
+      "sortNum": 11,
+      "body": { "type": "none" },
+      "headers": [
+        { "name": "Authorization", "value": "Bearer {{token_jwt}}" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "200" },
+        { "type": "res-body", "custom": "json.mensaje", "action": "contains", "value": "cerrada" }
+      ]
+    },
+    {
+      "id": "req-us08-12",
+      "colId": "ca-auth-collection-2026",
+      "containerId": "folder-us08",
+      "name": "US08-12 Header Authorization sin Bearer (formato incorrecto)",
+      "url": "http://localhost:3000/api/auth/perfil",
+      "method": "GET",
+      "sortNum": 12,
+      "body": { "type": "none" },
+      "headers": [
+        { "name": "Authorization", "value": "{{token_jwt}}" }
+      ],
+      "tests": [
+        { "type": "res-status", "custom": "", "action": "equal", "value": "401" },
+        { "type": "res-body", "custom": "json.error", "action": "contains", "value": "Formato" }
+      ]
+    }
+  ]
+}
