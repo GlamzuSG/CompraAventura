@@ -1,0 +1,9 @@
+{
+  "mensaje": "Inicio de sesión exitoso. Bienvenido Estudiante UV",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwibm9tYnJlIjoiRXN0dWRpYW50ZSBVViIsImVtYWlsIjoiZXN0dWRpYW50ZUB1di5jbCIsImlhdCI6MTc4MDM3MjA2OCwiZXhwIjoxNzgwMzc5MjY4fQ.IITWTEf09bqEwmHvOi0dzyQ3SGxqZp7DnPimOsr1-XQ",
+  "usuario": {
+    "id": 4,
+    "nombre": "Estudiante UV",
+    "email": "estudiante@uv.cl"
+  }
+}
