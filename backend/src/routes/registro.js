@@ -78,9 +78,9 @@ router.post('/registro', async (req, res) => {
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
 
-    // Insertar usuario
+    // Insertar usuario usando la columna password_hash
     const stmt = db.prepare(
-      'INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)'
+      'INSERT INTO usuarios (nombre, email, password_hash) VALUES (?, ?, ?)'
     );
     const result = stmt.run(nombreTrim, emailTrim, passwordHash);
 

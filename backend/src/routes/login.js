@@ -50,8 +50,8 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
 
-    // Verificar contraseña
-    const passwordValida = await bcrypt.compare(password, usuario.password);
+    // Verificar contraseña usando la columna password_hash
+    const passwordValida = await bcrypt.compare(password, usuario.password_hash);
     if (!passwordValida) {
       return res.status(401).json({ error: 'Credenciales inválidas' });
     }
