@@ -15,14 +15,14 @@ const db = new Database(DB_PATH);
 // Habilitar foreign keys
 db.pragma('foreign_keys = ON');
 
-// Crear tablas
+// Crear tabla usuarios con password_hash
 db.exec(`
   CREATE TABLE IF NOT EXISTS usuarios (
-    id         INTEGER PRIMARY KEY AUTOINCREMENT,
-    nombre     TEXT    NOT NULL,
-    email      TEXT    NOT NULL UNIQUE,
-    password   TEXT    NOT NULL,
-    creado_en  TEXT    NOT NULL DEFAULT (datetime('now'))
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre        TEXT    NOT NULL,
+    email         TEXT    NOT NULL UNIQUE,
+    password_hash TEXT    NOT NULL,
+    creado_en     TEXT    NOT NULL DEFAULT (datetime('now'))
   );
 `);
 
