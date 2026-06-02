@@ -8,7 +8,7 @@ Nuestro proyecto aborda la falta de transparencia en el mercado de consumo masiv
 ## 👥 Equipo de Trabajo (Scrum)
 
 * **Scrum Master:** Vicente Fernandez Simonetti
-* **Product Owner:** Joaquín Rodríguez López
+* **Product Owner:** Joaquín López Rodríguez
 * **Developers (Devs):**
     * Máximo Torrijo Espinoza
     * Joaquín Thomas Rojas Toledo
