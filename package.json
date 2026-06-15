@@ -1,0 +1,25 @@
+{
+  "name": "compraaventura",
+  "version": "1.0.0",
+  "description": "| Integrante | Rol | Ítems de la rúbrica a cargo | |---|---|---| | Vicente Fernandez Simonetti | Scrum Master, Product Owner, Developer | Criterio 3.1: Uso de GitHub Workflow | | Joaquín López Rodríguez | Scrum Master, Product Owner, Developer | Criterio 1.1: Mejora de HU con Clarita Review | | Joaquín Thomas Rojas Toledo | Scrum Master, Product Owner, Developer | Criterio 4.1: Casos de prueba Thunder Client | | Máximo Torrijo Espinoza | Scrum Master, Product Owner, Developer | Criterio 2.1: Desarrollo de dos APIs (backend) |",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlamzuSG/CompraAventura.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/GlamzuSG/CompraAventura/issues"
+  },
+  "homepage": "https://github.com/GlamzuSG/CompraAventura#readme"
+}
