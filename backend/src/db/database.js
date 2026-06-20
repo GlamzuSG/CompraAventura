@@ -25,5 +25,27 @@ db.exec(`
     creado_en     TEXT    NOT NULL DEFAULT (datetime('now'))
   );
 `);
-
+// Tabla productos
+db.exec(`
+  CREATE TABLE IF NOT EXISTS productos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    categoria TEXT,
+    descripcion TEXT
+  );
+  CREATE TABLE IF NOT EXISTS supermercados (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    ubicacion TEXT
+  );
+  CREATE TABLE IF NOT EXISTS precios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    valor REAL NOT NULL,
+    fecha TEXT,
+    producto_id INTEGER,
+    supermercado_id INTEGER,
+    FOREIGN KEY (producto_id) REFERENCES productos(id),
+    FOREIGN KEY (supermercado_id) REFERENCES supermercados(id)
+  );
+`);
 module.exports = db;
