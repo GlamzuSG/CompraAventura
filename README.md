@@ -79,7 +79,23 @@ curl http://localhost:3000/api/productos/1/precios
 ---
 
 ## 📁 Estructura del proyecto
----
+
+```
+CompraAventura/
+├── backend/
+│   ├── src/
+│   │   ├── db/database.js
+│   │   ├── routes/productos.js
+│   │   ├── routes/login.js
+│   │   ├── routes/registro.js
+│   │   ├── middleware/auth.js
+│   │   └── index.js
+│   ├── Dockerfile
+│   └── package.json
+├── diagramas/
+├── docker-compose.yml
+└── README.md
+```
 
 ## 📐 Artefactos del proyecto
 
