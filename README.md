@@ -1,8 +1,29 @@
-## Responsabilidades del equipo
+## Historia de usuario implementada
+| ID    | Nombre                           | Issue |
+|-------|----------------------------------|-------|
+| US-01 | Búsqueda de productos con filtro | #1    |
 
-| Integrante | Rol | Ítems de la rúbrica a cargo |
-|---|---|---|
-| Vicente Fernandez Simonetti | Scrum Master, Product Owner, Developer | Criterio 3.1: Uso de GitHub Workflow |
-| Joaquín López Rodríguez | Scrum Master, Product Owner, Developer | Criterio 1.1: Mejora de HU con Clarita Review |
-| Joaquín Thomas Rojas Toledo | Scrum Master, Product Owner, Developer | Criterio 4.1: Casos de prueba Thunder Client |
-| Máximo Torrijo Espinoza | Scrum Master, Product Owner, Developer | Criterio 2.1: Desarrollo de dos APIs (backend) |
+## Artefactos del proyecto
+| Artefacto                   | Enlace                                  |
+|-----------------------------|-----------------------------------------|
+| Diagrama de secuencia       | ./diagramas/secuencia.png               |
+| Diagrama de despliegue      | ./diagramas/despliegue.png              |
+| Diagrama de componentes     | ./diagramas/componentes.png             |
+| Diagrama de estados         | ./diagramas/Estados-precio.png          |
+| Diagrama de casos de uso    | ./diagramas/casos-de-uso.png            |
+| Especificación de HU        | ./backend/EspecificacionesHU.md         |
+| Casos de prueba             | ./backend/CasosDePrueba.md              |
+| Deuda técnica               | ./backend/DeudaTecnica.md               |
+
+## Instalación y ejecución
+### Requisitos previos
+- Node.js v18 o superior
+- npm
+
+### Pasos
+git clone https://github.com/GlamzuSG/CompraAventura.git
+cd CompraAventura/backend
+npm install
+npm start
+
+La API queda disponible en http://localhost:3000
