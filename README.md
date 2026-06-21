@@ -102,4 +102,58 @@ curl http://localhost:3000/api/productos/1/precios
 
 ---
 
+## 🚀 Tecnologías
+
+- **Node.js** — entorno de ejecución JavaScript
+- **Express** — framework web minimalista
+- **better-sqlite3** — base de datos SQL local
+- **JWT + bcrypt** — autenticación segura
+
+---
+
+## 📋 Endpoints implementados
+
+| Método | Ruta | Descripción |
+|--------|------|-------------|
+| `POST` | `/api/auth/registro` | Registrar usuario |
+| `POST` | `/api/auth/login` | Iniciar sesión |
+| `GET` | `/api/productos` | Buscar productos con filtro |
+| `POST` | `/api/productos` | Crear producto |
+| `PUT` | `/api/productos/:id` | Editar producto |
+| `DELETE` | `/api/productos/:id` | Eliminar producto |
+| `GET` | `/api/productos/:id/precios` | Comparar precios |
+
+---
+
+## 💻 Instalación y ejecución
+
+### Requisitos
+- Node.js v18 o superior
+- npm
+
+### Pasos
+```bash
+git clone https://github.com/GlamzuSG/CompraAventura.git
+cd CompraAventura/backend
+npm install
+npm start
+```
+La API queda disponible en `http://localhost:3000`
+
+---
+
+## 📐 Artefactos del proyecto
+
+| Artefacto | Enlace |
+|-----------|--------|
+| Diagrama de secuencia | [ver](./diagramas/secuencia.png) |
+| Diagrama de despliegue | [ver](./diagramas/despliegue.png) |
+| Diagrama de componentes | [ver](./diagramas/componentes.png) |
+| Diagrama de estados | [ver](./diagramas/Estados-precio.png) |
+| Diagrama de casos de uso | [ver](./diagramas/casos-de-uso.png) |
+| Especificación de HU | [ver](./backend/EspecificacionesHU.md) |
+| Casos de prueba | [ver](./backend/CasosDePrueba.md) |
+| Deuda técnica | [ver](./backend/DeudaTecnica.md) |
+---
+
 *Proyecto académico — Ingeniería de Software, Universidad de Valparaíso.*
