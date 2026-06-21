@@ -13,6 +13,17 @@ API REST para comparar precios de productos entre supermercados. Construida con 
 
 ---
 
+## 👥 Equipo de Trabajo
+
+| Integrante | Rol | Ítems rúbrica |
+|------------|-----|---------------|
+| Vicente Fernandez Simonetti | Scrum Master, Developer | 3.1: GitHub Workflow |
+| Joaquín López Rodríguez | Product Owner, Developer | 1.1: Mejora de HU |
+| Joaquín Thomas Rojas Toledo | Developer, QA | 4.1: Casos de prueba |
+| Máximo Torrijo Espinoza | Technical Lead, Developer | 2.1: Desarrollo APIs |
+
+---
+
 ## 📋 Endpoints
 
 | Método | Ruta | Descripción |
@@ -27,20 +38,22 @@ API REST para comparar precios de productos entre supermercados. Construida con 
 
 ---
 
-## 💻 Instalación y ejecución
+## 💻 Ejecutar localmente
 
-### Requisitos previos
+### Requisitos
 - Node.js v18 o superior
 - npm
 
 ### Pasos
+
 ```bash
 git clone https://github.com/GlamzuSG/CompraAventura.git
 cd CompraAventura/backend
 npm install
 npm start
 ```
-La API queda disponible en `http://localhost:3000`
+
+La API quedará disponible en `http://localhost:3000`
 
 ---
 
@@ -83,77 +96,21 @@ curl http://localhost:3000/api/productos/1/precios
 
 ---
 
-## 👥 Responsabilidades del equipo
-
-| Integrante | Rol | Ítems rúbrica |
-|------------|-----|---------------|
-| Vicente Fernandez Simonetti | Scrum Master, Developer | 3.1: GitHub Workflow |
-| Joaquín López Rodríguez | Product Owner, Developer | 1.1: Mejora de HU |
-| Joaquín Thomas Rojas Toledo | Developer, QA | 4.1: Casos de prueba |
-| Máximo Torrijo Espinoza | Technical Lead, Developer | 2.1: Desarrollo APIs |
-
----
-
-## 📝 Historia de usuario implementada
+## 📝 Historias de usuario
 
 | ID | Nombre | Issue |
 |----|--------|-------|
-| US-01 | Búsqueda de productos con filtro | #1 |
+| US-01 | Búsqueda comparativa por nombre | [#1](https://github.com/GlamzuSG/CompraAventura/issues/1) |
+| US-02 | Manejo de productos no encontrados | [#2](https://github.com/GlamzuSG/CompraAventura/issues/2) |
+| US-03 | Ordenar por precio y alertas | [#3](https://github.com/GlamzuSG/CompraAventura/issues/3) |
+| US-04 | Carga masiva de precios (CSV) | [#4](https://github.com/GlamzuSG/CompraAventura/issues/4) |
+| US-05 | Resiliencia de servidores | [#5](https://github.com/GlamzuSG/CompraAventura/issues/5) |
+| US-06 | Priorización por GPS | [#6](https://github.com/GlamzuSG/CompraAventura/issues/6) |
+| US-07 | Registro de usuarios | [#7](https://github.com/GlamzuSG/CompraAventura/issues/7) |
+| US-08 | Inicio de sesión con JWT | [#8](https://github.com/GlamzuSG/CompraAventura/issues/8) |
+| US-09 | Sugerencias dinámicas | [#9](https://github.com/GlamzuSG/CompraAventura/issues/9) |
+| US-10 | Filtros avanzados | [#10](https://github.com/GlamzuSG/CompraAventura/issues/10) |
 
----
-
-## 🚀 Tecnologías
-
-- **Node.js** — entorno de ejecución JavaScript
-- **Express** — framework web minimalista
-- **better-sqlite3** — base de datos SQL local
-- **JWT + bcrypt** — autenticación segura
-
----
-
-## 📋 Endpoints implementados
-
-| Método | Ruta | Descripción |
-|--------|------|-------------|
-| `POST` | `/api/auth/registro` | Registrar usuario |
-| `POST` | `/api/auth/login` | Iniciar sesión |
-| `GET` | `/api/productos` | Buscar productos con filtro |
-| `POST` | `/api/productos` | Crear producto |
-| `PUT` | `/api/productos/:id` | Editar producto |
-| `DELETE` | `/api/productos/:id` | Eliminar producto |
-| `GET` | `/api/productos/:id/precios` | Comparar precios |
-
----
-
-## 💻 Instalación y ejecución
-
-### Requisitos
-- Node.js v18 o superior
-- npm
-
-### Pasos
-```bash
-git clone https://github.com/GlamzuSG/CompraAventura.git
-cd CompraAventura/backend
-npm install
-npm start
-```
-La API queda disponible en `http://localhost:3000`
-
----
-
-## 📐 Artefactos del proyecto
-
-| Artefacto | Enlace |
-|-----------|--------|
-| Diagrama de secuencia | [ver](./diagramas/secuencia.png) |
-| Diagrama de despliegue | [ver](./diagramas/despliegue.png) |
-| Diagrama de componentes | [ver](./diagramas/componentes.png) |
-| Diagrama de estados | [ver](./diagramas/Estados-precio.png) |
-| Diagrama de casos de uso | [ver](./diagramas/casos-de-uso.png) |
-| Especificación de HU | [ver](./backend/EspecificacionesHU.md) |
-| Casos de prueba | [ver](./backend/CasosDePrueba.md) |
-| Deuda técnica | [ver](./backend/DeudaTecnica.md) |
 ---
 
 *Proyecto académico — Ingeniería de Software, Universidad de Valparaíso.*
