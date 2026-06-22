@@ -40,6 +40,29 @@ API REST para comparar precios de productos entre supermercados. Construida con 
 
 ## 💻 Ejecutar localmente
 
+### Requisitos previos
+- Node.js v18 o superior
+- npm
+- Docker (opcional, para ejecutar con contenedores)
+
+### Variables de entorno
+Crea un archivo `.env` dentro de `backend/` con las siguientes variables:
+---
+### Instalación y ejecución (sin Docker)
+```bash
+git clone https://github.com/GlamzuSG/CompraAventura.git
+cd CompraAventura/backend
+npm install
+npm start
+```
+La API quedará disponible en `http://localhost:3000`
+---
+### Instalación y ejecución (con Docker)
+```bash
+docker-compose up --build
+```
+La API quedará disponible en `http://localhost:3000`
+
 ### Requisitos
 - Node.js v18 o superior
 - npm
@@ -126,7 +149,13 @@ CompraAventura/
 | US-08 | Inicio de sesión con JWT | [#8](https://github.com/GlamzuSG/CompraAventura/issues/8) |
 | US-09 | Sugerencias dinámicas | [#9](https://github.com/GlamzuSG/CompraAventura/issues/9) |
 | US-10 | Filtros avanzados | [#10](https://github.com/GlamzuSG/CompraAventura/issues/10) |
+---
+## 🎁 Bonus
 
+| Bonus | Estado | Ubicación |
+|-------|--------|-----------|
+| Contenedores (docker-compose) | ✅ Sí | ./docker-compose.yml |
+| Spec-driven development | ❌ No | — |
 ---
 
 *Proyecto académico — Ingeniería de Software, Universidad de Valparaíso.*
