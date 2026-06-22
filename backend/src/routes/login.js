@@ -117,10 +117,8 @@ router.put('/perfil', authMiddleware, async (req, res) => {
         return res.status(400).json({ error: 'La contraseña debe tener al menos 6 caracteres' });
       }
       const salt = await bcrypt.genSalt(10);
-      const nuevoHash = await bcrypt.createHash ? await bcrypt.hash(password, salt) : await bcrypt.hash(password, 10); 
-      // Por si acaso usamos el estándar directo:
-      const passwordHash = await bcrypt.hash(password, 10);
-      
+      const passwordHash = await bcrypt.hash(password, salt);
+
       query += ', password_hash = ?';
       params.push(passwordHash);
     }
