@@ -35,10 +35,3 @@ npm start
 ```
 La API queda disponible en http://localhost:3000
 
-## Responsabilidades del equipo
-| Integrante | Rol                  | Ítems rúbrica |
-|------------|----------------------|---------------|
-| [Nombre 1] | Scrum Master         | 1.1, 2.1      |
-| [Nombre 2] | Arquitecto           | 3.1, 3.2      |
-| [Nombre 3] | Technical Lead       | 1.3, 5.1      |
-| [Nombre 4] | Quality Assurance    | 4.1, 1.2      |
