@@ -2,6 +2,7 @@
 | ID    | Nombre                           | Issue |
 |-------|----------------------------------|-------|
 | US-01 | Búsqueda de productos con filtro | #1    |
+| US-07 | Resgritrar usuario y guardar listas | #7    |
 
 ## Artefactos del proyecto
 | Artefacto                   | Enlace                                  |
