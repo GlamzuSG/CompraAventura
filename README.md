@@ -56,7 +56,7 @@ npm install
 npm start
 ```
 La API quedará disponible en `http://localhost:3000`
----
+
 ### Instalación y ejecución (con Docker)
 ```bash
 docker-compose up --build
