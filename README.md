@@ -47,7 +47,7 @@ API REST para comparar precios de productos entre supermercados. Construida con 
 
 ### Variables de entorno
 Crea un archivo `.env` dentro de `backend/` con las siguientes variables:
----
+
 ### Instalación y ejecución (sin Docker)
 ```bash
 git clone https://github.com/GlamzuSG/CompraAventura.git
