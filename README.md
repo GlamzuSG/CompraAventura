@@ -8,22 +8,24 @@ Nuestro proyecto aborda la falta de transparencia en el mercado de consumo masiv
 
 ## 👥 Equipo de Trabajo (Scrum)
 
-- **Scrum Master:** Vicente Fernandez Simonetti
-- **Product Owner:** Joaquín López Rodríguez
+- **Scrum Master:** Vicente Fernandez Simonetti,Joaquín López Rodríguez, Máximo Torrijo Espinoza, Joaquín Thomas Rojas Toledo
+- **Product Owner:** Joaquín López Rodríguez, Vicente Fernandez Simonetti, Máximo Torrijo Espinoza, Joaquín Thomas Rojas Toledo
 - **Developers:**
   - Máximo Torrijo Espinoza
   - Joaquín Thomas Rojas Toledo
+  - Vicente Fernandez Simonetti
+  - Joaquín López Rodríguez,
 
 ---
 
 ## 🛠️ Responsabilidades del Equipo
 
-| Integrante | Rol | Ítems de la rúbrica a cargo |
-|------------|-----|-----------------------------|
-| Vicente Fernandez Simonetti | Scrum Master | Facilitación de Ceremonias, Gestión de Impedimentos, Seguimiento de Atributos de Calidad |
-| Joaquín Rodríguez López | Product Owner | Gestión de Backlog, Definición de Historias de Usuario, Validación de Valor de Negocio |
-| Joaquín Thomas Rojas Toledo | Developer | Capa de Cliente (Frontend), Módulo de Autenticación (JWT), Diseño de Interfaz (Figma) |
-| Máximo Torrijo Espinoza | Developer | Capa de Lógica (Backend), Integración de Adaptadores (APIs Externas), Persistencia (SQL/Redis) |
+| Integrante | Rol |  
+|------------|-----| 
+| Vicente Fernandez Simonetti |Product Owner Scrum Master,  Developer |  
+| Joaquín Rodríguez López | Product Owner, Scrum Master,  Developer|  
+| Joaquín Thomas Rojas Toledo | Product Owner, Scrum Master,  Developer |  
+| Máximo Torrijo Espinoza | Product Owner, Scrum Master, Developer | 
 
 ---
 
