@@ -1,0 +1,15 @@
+==================================================
+ PROYECTO: CompraAventura - API REST Backend
+==================================================
+
+Este archivo sirve como confirmación de conectividad inicial 
+para la estructura del backend en el repositorio de Git.
+
+Ficha Técnica Real del Proyecto:
+- Entorno de ejecución: Node.js (v18 o superior)
+- Framework Web: Express
+- Base de datos local: SQLite (librería better-sqlite3)
+- Autenticación segura: JWT (JSON Web Tokens) + bcrypt
+
+Estado actual: Rutas base e inicialización de carpetas 
+completadas con éxito. Listo para revisión.
