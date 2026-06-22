@@ -108,9 +108,22 @@ npm start
 La API quedará disponible en `http://localhost:3000`
 
 ### Instalación y ejecución (con Docker)
-
 ```bash
 docker-compose up --build
+```
+La API quedará disponible en `http://localhost:3000`
+
+### Requisitos
+- Node.js v18 o superior
+- npm
+
+### Pasos
+
+```bash
+git clone https://github.com/GlamzuSG/CompraAventura.git
+cd CompraAventura/backend
+npm install
+npm start
 ```
 
 La API quedará disponible en `http://localhost:3000`
