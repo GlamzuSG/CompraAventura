@@ -25,5 +25,4 @@ db.exec(`
     creado_en     TEXT    NOT NULL DEFAULT (datetime('now'))
   );
 `);
-
 module.exports = db;

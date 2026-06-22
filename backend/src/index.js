@@ -21,8 +21,11 @@ app.use((req, res, next) => {
 const registroRouter = require('./routes/registro');
 const loginRouter   = require('./routes/login');
 
+const productosRouter = require('./routes/productos');
+
 app.use('/api/auth', registroRouter);
 app.use('/api/auth', loginRouter);
+app.use('/api/productos', productosRouter);
 
 // Health check
 app.get('/api/health', (req, res) => {
