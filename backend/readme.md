@@ -2,7 +2,12 @@
 | ID    | Nombre                           | Issue |
 |-------|----------------------------------|-------|
 | US-01 | Búsqueda de productos con filtro | #1    |
+| US-02 | Manejo de productos no encontrados | #2    |
+| US-03 | Ordenar por precio y alertas     | #3    |
 | US-07 | Resgritrar usuario y guardar listas | #7    |
+| US-08 | Sugerencias dinámicas             | #8    |
+| US-10 | Filtros avanzados | #10    |
+
 
 ## Artefactos del proyecto
 | Artefacto                   | Enlace                                  |
