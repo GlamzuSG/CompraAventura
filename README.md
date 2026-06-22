@@ -47,6 +47,8 @@ API REST para comparar precios de productos entre supermercados. Construida con 
 
 ### Variables de entorno
 Crea un archivo `.env` dentro de `backend/` con las siguientes variables:
+PORT=3000
+JWT_SECRET=tu_clave_secreta
 
 ### Instalación y ejecución (sin Docker)
 ```bash
