@@ -176,6 +176,20 @@ CompraAventura/
 | Deuda técnica | [ver](./backend/DeudaTecnica.md) |
 
 ---
+## ⚙️ Características Funcionales
+
+| Módulo | Descripción |
+| :--- | :--- |
+| **Autenticación** | Sistema centralizado con credenciales cifradas mediante **JWT**. |
+| **Comparativa Multitienda** | Despliegue de precios y ofertas de diversas fuentes simultáneamente. |
+| **Sugerencias Dinámicas** | Motor de recomendaciones para minimizar la carga cognitiva. |
+| **Monitoreo de Stock Real** | Verificación de disponibilidad de artículos en tiempo real. |
+
+---
+
+## 🎨 Diseño (Figma)
+🔗 [Prototipo en Figma](https://rack-studio-58141370.figma.site/login)
+
 
 ## 🎁 Bonus
 
